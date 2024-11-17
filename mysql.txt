@@ -1,0 +1,9 @@
+CREATE TABLE tasks (
+    ID INT AUTO_INCREMENT PRIMARY KEY,         -- Unique ID for each task (auto-incremented)
+    name VARCHAR(255) NOT NULL,                 -- Task name (up to 255 characters, cannot be null)
+    priority ENUM('Low', 'Medium', 'High') NOT NULL, -- Priority level (Low, Medium, High)
+    due_date DATE,                              -- Due date (using DATE format 'YYYY-MM-DD')
+    description TEXT,                           -- Task description (long text, can be empty)
+    location VARCHAR(255),                      -- Task location (up to 255 characters, can be empty)
+    status ENUM('Pending', 'In Progress', 'Completed', 'On Hold') NOT NULL -- Task status
+);
