@@ -7,3 +7,10 @@ CREATE TABLE tasks (
     location VARCHAR(255),                      -- Task location (up to 255 characters, can be empty)
     status ENUM('Pending', 'In Progress', 'Completed', 'On Hold') NOT NULL -- Task status
 );
+
+CREATE TABLE notes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

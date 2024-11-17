@@ -1,14 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "todo";
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include "dbConn.php";
 
 // SQL query to fetch task details
 $sql = "SELECT name, priority, due_date, description, location, status FROM tasks";

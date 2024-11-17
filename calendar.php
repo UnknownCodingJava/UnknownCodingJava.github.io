@@ -1,14 +1,5 @@
 <?php
-// Database connection setup
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "todo";
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die('Connection failed: ' . $conn->connect_error);
-}
+include "dbConn.php";
 
 // Check if month and year are set in the URL, if not, use the current date
 if (isset($_GET['month']) && isset($_GET['year'])) {
