@@ -13,11 +13,10 @@ if($result->num_rows > 0){
     }
 }
 
-
+//add note to the database
 if(isset($_POST['addNote'])){
     $title = $_POST['title'];
     $content = $_POST['content'];
-
     $stmt = $conn->prepare("INSERT INTO notes(title, content) VALUES(?,?)");
     $stmt->bind_param("ss", $title, $content);
     if($stmt->execute()){
@@ -44,7 +43,6 @@ if(isset($_POST['addNote'])){
         <div id="addNote" onclick="addNote();">+Add note</div>
     </div>
 
-
 <?php if(!empty($entries)): ?>
     <?php foreach ($entries as $entry): ?>
     <div class="border col-3 row-4 mt-4" id="noteContainer">
@@ -64,8 +62,6 @@ if(isset($_POST['addNote'])){
         <div id="noteBody" contenteditable="true">Add new notes</div>
     </div>
     <?php endif; ?>
-
-
 </div>
 
 <script>
